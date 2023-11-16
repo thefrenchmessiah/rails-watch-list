@@ -1,0 +1,13 @@
+<h1>Bookmarks for <%= @list.name %></h1>
+<br>
+<%= link_to "New Bookmark", new_list_bookmark_path(params[:list_id]) %>
+<br>
+<% @bookmarks.each do |bookmark| %>
+  <div class="card">
+    <h3><%= bookmark.movie.title %></h3>
+    <p><%= bookmark.comment.capitalize %></p>
+    <button><%= link_to "Delete",
+                bookmark_path(bookmark),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></button>
+  </div>
+<% end %>

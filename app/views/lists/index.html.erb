@@ -1,0 +1,10 @@
+<h1>Welcome to your WatchLists</h1>
+<br>
+<button class="btn btn-dark"><%= link_to "Create a WatchList", new_list_path %></button>
+<br>
+<br>
+<% @lists.each do |list| %>
+  <ul>
+    <%= link_to list.name, list_path(list.id) %>
+  </ul>
+<% end %>

@@ -10,3 +10,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  background-color: beige;
+}
+
+.container {
+  margin: 0 auto;
+}

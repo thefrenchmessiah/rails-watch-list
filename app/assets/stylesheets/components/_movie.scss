@@ -1,0 +1,14 @@
+.movies-grid {
+  display: flex;
+}
+
+.movie-card {
+  width: 200px;
+  height: 300px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

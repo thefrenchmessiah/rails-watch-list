@@ -1,0 +1,15 @@
+// Specific CSS for your home-page
+$paddingunit: 5px;
+$fontunit: 4px;
+
+.card-lists {
+  background-color: brown;
+  padding: ($paddingunit * 2) ($paddingunit * 6);
+  width: 300px;
+  border-radius: $paddingunit;
+}
+
+.card-lists-item {
+  text-decoration: none;
+  color: white;
+}

@@ -1,3 +1,13 @@
 <h1><%= @list.name %></h1>
 <br>
 <h2><%= link_to "Your Bookmarks", list_bookmarks_path(params[:id]) %></h2>
+<br>
+<div class="movies-grid">
+<% @list.movies.each do |movie| %>
+    <ul>
+      <div class="movie-card" style="background-image: url('<%=movie.poster_url%>')">
+        <%= movie.title %>
+      </div>
+    </ul>
+  <% end %>
+</div>

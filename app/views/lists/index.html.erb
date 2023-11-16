@@ -5,6 +5,6 @@
 <br>
 <% @lists.each do |list| %>
   <ul>
-    <%= link_to list.name, list_path(list.id) %>
+    <div class="card-lists"><%= link_to list.name, list_path(list.id), class:"card-lists-item"%></div>
   </ul>
 <% end %>

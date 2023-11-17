@@ -1,10 +1,12 @@
-<h1>Welcome to your WatchLists</h1>
+<h1 class="banner">Welcome to your WatchLists</h1>
 <br>
-<button class="btn btn-dark"><%= link_to "Create a WatchList", new_list_path %></button>
+<button class="button-new-list"><%= link_to "Create a WatchList", new_list_path, class:"button-new-list-item" %></button>
 <br>
 <br>
-<% @lists.each do |list| %>
-  <ul>
-    <div class="card-lists"><%= link_to list.name, list_path(list.id), class:"card-lists-item"%></div>
-  </ul>
-<% end %>
+<div class="container text-center">
+  <div class="row row-cols-3">
+    <% @lists.each do |list| %>
+      <div class="col card-lists"><%= link_to list.name, list_bookmarks_path(list.id), class:"card-lists-item"%></div>
+    <% end %>
+  </div>
+</div>

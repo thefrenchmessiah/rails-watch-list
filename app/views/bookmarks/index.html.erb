@@ -1,13 +1,19 @@
-<h1>Bookmarks for <%= @list.name %></h1>
+<h1 class="banner"><%= @list.name.capitalize %></h1>
 <br>
-<%= link_to "New Bookmark", new_list_bookmark_path(params[:list_id]) %>
+<button class="button-new-list"><%= link_to "New Bookmark", new_list_bookmark_path(params[:list_id]), class:"button-new-list-item" %></button>
 <br>
-<% @bookmarks.each do |bookmark| %>
-  <div class="card">
-    <h3><%= bookmark.movie.title %></h3>
-    <p><%= bookmark.comment.capitalize %></p>
-    <button><%= link_to "Delete",
-                bookmark_path(bookmark),
-                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></button>
+<div class="container text-center">
+  <div class="row row-cols-4">
+    <% @bookmarks.each do |bookmark| %>
+      <div class="col card">
+        <div class="movie-card" style="background-image: url('<%=bookmark.movie.poster_url%>')">
+        </div>
+        <h3><%= bookmark.movie.title %></h3>
+        <p><%= bookmark.comment.capitalize %></p>
+        <button><%= link_to "Delete",
+                    bookmark_path(bookmark),
+                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></button>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
